@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 Django settings for my_blog project.
 
@@ -31,13 +32,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # 'bootstrap_admin',  #一定要放在`django.contrib.admin`前面  还是有点问题的这里，有bug，还是没有install对？
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'article',
 ]
+
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
