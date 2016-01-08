@@ -1,3 +1,4 @@
+# coding=utf-8
 """my_blog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -16,10 +17,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from article import views #这里为什么直接导入article不行？而是需要导入views，说是找不到这个属性
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', 'article.views.home'),
-    url(r'^(?P<my_args>\d+)/$', 'article.views.detail', name='detail'),
-    url(r'^test/$', 'article.views.test'),
+    url(r'^$', views.home),
+    url(r'^test/$', views.test),
+    url(r'^(?P<id>\d+)/$', views.detail, name='detail'),
 ]
