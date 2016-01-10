@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load custom_markdown %}
 
 {% block content %}
 <div class="posts">
@@ -14,9 +15,12 @@
 
                 <div class="post-description">
                     <p>
-                        {{ post.content }}
+                        {{ post.content | custom_markdown | truncatewords_html:0 }}
+{#                        这里对中文和英文的识别是不一样的，对于英文来说可以正确定位，中文还是有点问题的#}
                     </p>
                 </div>
+{#         <a class="pure-button" href="{% url "detail" id=post.id %}">Read More >>> </a>#}
+        <a href="{% url "detail" post.id %}" class="btn btn-primary btn-sm active" role="button">>Read More >>> </a>
         </section>
     {% endfor %}
 </div><!-- /.blog-post -->

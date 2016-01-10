@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^$', views.home),
     url(r'^test/$', views.test),
     url(r'^page/(\d+)$', views.detail, name='detail'),#这里我不知道为什么在官方教程中总是有尖括号扩起来是用来表示什么呢？
+    url(r'^aboutme/$',views.about_me,name='about_me'),
 ]

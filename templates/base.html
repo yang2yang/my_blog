@@ -4,9 +4,15 @@
   <title>Bootstrap 实例</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel=        "stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
   <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+{#    添加了下面两行代码之后发现markdown语法也支持了，代码高亮也支持了，标签也像一个标签了，这是什么鬼？本来markdown都没有支持，这是什么原因？#}
+{#    但是主页还是没有markdown的语法显示效果，只是点进去之后有效果#}
+    <link rel="stylesheet" href="http://picturebag.qiniudn.com/blog.css">
+    <link rel="stylesheet" href="http://picturebag.qiniudn.com/monokai.css">
+{# 看来刚开始还弄错了，那个markdown语法跟这两行没有任何关系#}
+{#    测试了一下这两行的意义只是在于在python这个标签上加上了css样式？应该还有其他的吧？初步先这样判断#}
 </head>
 <body>
 
@@ -32,6 +38,7 @@
     </div>
 
     <div class="col-sm-4">
+      <a href={% url 'about_me' %}>about me</a>
       <h3>第三列</h3>
       <p>学的不仅是技术，更是梦想！</p>
       <p>再牛逼的梦想,也抵不住你傻逼似的坚持！</p>

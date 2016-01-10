@@ -22,3 +22,6 @@ def detail(request, id):
 
 def test(request):
     return render(request, 'test.html', {'current_time': datetime.now()})
+
+def about_me(request) :
+    return render(request, 'aboutme.html')
