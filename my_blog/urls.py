@@ -18,12 +18,14 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from article import views #这里为什么直接导入article不行？而是需要导入views，说是找不到这个属性
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.home),
+    url(r'^$', views.home,name="home"),
     url(r'^test/$', views.test),
     url(r'^page/(\d+)$', views.detail, name='detail'),#这里我不知道为什么在官方教程中总是有尖括号扩起来是用来表示什么呢？
     url(r'^aboutme/$',views.about_me,name='about_me'),
     url(r'^markdown/', include('django_markdown.urls')), #这里是安装django_markdown的url
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
